@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+</head>
+
+<body>
+  <script>
+    var name = '小王',
+      age = 17;
+    var obj = {
+      name: '小张',
+      objAge: this.age,
+      myfun: function() {
+        console.log(this.name + "年龄" + this.age)
+      }
+    }
+    var db = {
+      name: '德玛',
+      age: 99
+    }
+    obj.myfun.call(db)
+    obj.myfun.apply(db)
+    obj.myfun.bind(db)()
+    console.log(obj.myfun.bind(db))
+    obj.myfun()
+      // console.log(obj.objAge);
+      // obj.myfun()
+
+    var fav = '盲僧';
+
+    function shows() {
+      console.log(this.fav)
+    }
+    // shows()
+  </script>
+</body>
+
+</html>

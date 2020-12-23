@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 100%;
+      height: 200px;
+      background-color: rgb(169, 168, 231);
+      line-height: 200px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container"></div>
+
+  <script>
+    // 第一步，使用时间戳，“顾头不顾尾”，第一次触发，最后一次不会被触发
+    // const throttle = (func, waitTime) => {
+    //   let oldTime = 0
+    //   return function () {
+    //     let that = this
+    //     let args = arguments
+    //     let nowTime = new Date().valueOf()
+    //     console.log(`oldTime:${oldTime}`)
+    //     console.log(`nowTime:${nowTime}`)
+    //     if( nowTime-oldTime > waitTime) {
+    //       // 立即执行
+    //       console.log(`执行了`)
+    //       func.apply(that, args)
+    //       oldTime = nowTime
+    //     }
+    //   }
+    // }
+
+    // 第二步，顾尾不顾头，第一次不会触发，最后一次会触发
+    // const throttle = (func, waitTime) => {
+    //   let timeout
+    //   return function () {
+    //     let that = this
+    //     let args = arguments
+    //     if (!timeout) {
+    //       timeout = setTimeout(() => {
+    //         timeout = null
+    //         func.apply(that, args)
+    //       }, waitTime)
+    //     }
+    //   }
+    // }
+
+    // 第三步,顾头顾尾
+    // const throttle = (func, waitTime) => {
+    //   let timeout
+    //   let oldTime = 0
+    //   return function () {
+    //     let that = this
+    //     let args = arguments
+    //     let nowTime = new Date().valueOf()
+    //     if (nowTime - oldTime > waitTime) {   //1.判断，此时肯定成立          8.鼠标移动，此时判断不成立     9.当waitTime后，条件成立，第7步的timeout也要即将执行
+    //       if (timeout) {                      //2.此时timeout为undefined，不执行                           10.但是在即将执行时，这里会进入判断，清楚第7步产生的计时器           
+    //         clearTimeout(timeout)
+    //         timeout = null
+    //       }
+    //       console.log("1")
+    //       func.apply(that, args)              //3.执行（此时为鼠标刚进来）count++                           11.执行 count++
+    //       oldTime = nowTime
+    //     } else if (!timeout) {                //4.判断，此时也成立          9.此时判断不成立，因为timeout还没有执行
+    //       console.log("2")
+    //       timeout = setTimeout(() => {        //5.在第3步执行后的waitTime时间后执行          
+    //         oldTime = new Date().valueOf()    //6.将oldTime设为当前时间戳，以免下一次循环重复
+    //         timeout = null
+    //         console.log("我是到最后一次才会执行到")
+    //         func.apply(that, args)            //7.执行，但是得过waitTime之后再执行                            12.如果执行到这个时候，鼠标不在移动，那么在之后又执行到第10步的时候，不会清楚计时器
+    //       }, waitTime)                                                                                      // 也就是在waitTime后执行（尾）
+    //     }
+    //   }
+    // }
+
+    // 第四步，加入参数
+    // const throttle = (func, waitTime, options) => {
+    //   let timeout
+    //   let oldTime = 0
+    //   return function () {
+    //     let that = this
+    //     let args = arguments
+    //     let nowTime = new Date().valueOf()
+    //     if (options.leading === false) oldTime = nowTime
+    //     if (nowTime - oldTime > waitTime) {
+    //       if (timeout) {
+    //         clearTimeout(timeout)
+    //         timeout = null
+    //       }
+    //       console.log("1")
+    //       func.apply(that, args)
+    //       oldTime = nowTime
+    //     } else if (!timeout && options.trailing !== false) {
+    //       console.log("2")
+    //       timeout = setTimeout(() => {
+    //         oldTime = new Date().valueOf()
+    //         timeout = null
+    //         console.log("我是到最后一次才会执行到")
+    //         func.apply(that, args)
+    //       }, waitTime)
+    //     }
+    //   }
+    // }
+
+    const throttle = (func, waitTime, options) => {
+      let old = 0
+      let timeout 
+      return function () {
+        const that = this
+        const args = arguments
+        let now = new Date().valueOf()
+        if (now - old > waitTime) {
+          console.log('1')
+          if(timeout){
+            clearTimeout(timeout)
+            timeout = null
+          }
+          func.apply(that, args)
+          old = now
+        } else if (!timeout) {
+          console.log('2')
+          timeout = setTimeout(() => {
+            oldTime = new Date().valueOf()
+            timeout = null
+            func.apply(that, args)
+          }, waitTime)
+        }
+      }
+    }
+
+    
+
+
+    let count = 0
+    let container = document.querySelector('.container')
+    const doSomeThing = (e) => {
+      container.innerHTML = count++
+    }
+    container.onmousemove = throttle(doSomeThing, 1000, {
+      leading: true,
+      trailing: true
+    })     // 这是用了防抖函数
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+    }
+    
+    .contain {
+      text-align: center;
+      margin: 100px 0;
+      position: relative;
+    }
+    
+    .show {
+      display: none;
+      top: 1.98px;
+      position: absolute;
+      text-align: center;
+      /* width: 20px; */
+      height: 20px;
+      background-color: rgb(96, 245, 195);
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="contain">
+    <input type="text" value="" id="in">
+    <span class="show" id="out">dsafsadfdsafsad</span>
+  </div>
+  <script>
+    var myin = document.getElementById("in")
+    var myout = document.getElementById("out")
+    console.log(myin.value)
+    console.log(myout.innerText)
+    myin.value = "请输入"
+    myin.style.color = "#ccc"
+    myin.onfocus = function() {
+      if (myin.value == "请输入") {
+        myin.value = ""
+        myin.style.color = "black"
+      }
+      console.log(myin.innerText)
+    }
+    myin.onblur = function() {
+      if (myin.value == "") {
+        myout.style.display = "inline-block"
+        myout.innerText = "请输入成绩"
+      } else if (typeof parseInt(myin.value) !== "number") {
+        myout.style.display = "inline-block"
+        myout.innerText = "请输入数字"
+
+      } else if (myin.value < 0 || myin.value > 150) {
+        myout.style.display = "inline-block"
+        myout.innerText = "请输入正确的成绩"
+      } else {
+        myout.innerText = "输入正确"
+        myout.style.display = "none"
+      }
+      console.log(typeof parseInt(myin.value))
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+</head>
+
+<body>
+
+  <script>
+    class person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      showname() {
+        console.log(this.name)
+      }
+      showage() {
+        console.log(this.age)
+      }
+    }
+    var p1 = new person("songjunwei", 22)
+    p1.showname()
+    p1.showage()
+
+    class me extends person {
+      constructor(name, age, sex) {
+        super(name, age)
+        this.sex = sex
+      }
+      myfuc() {
+        console.log(this.sex)
+      }
+    }
+    var m1 = new me("hhhhh", 22, "男")
+    m1.showname()
+    m1.showage()
+    m1.myfuc()
+  </script>
+
+</body>
+
+</html>

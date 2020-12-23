@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+</head>
+
+<body>
+
+  <script>
+
+    // const quickSort = function (arr) {
+    //   if (arr.length <= 1) return arr
+    //   var pivot = arr[0];
+    //   let left = [];
+    //   let right = [];
+    //   let mid = []
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] < pivot) {
+    //       left.push(arr[i]);
+    //     } else if (arr[i] > pivot) {
+    //       right.push(arr[i]);
+    //     } else {
+
+    //     }
+    //   }
+    //   return quickSort(left).concat(mid, quickSort(right));
+    // }
+
+
+
+    const quickSort = (arr, low = 0, high = arr.length-1) => {
+      let left = low
+      let right = high
+      let basic = arr[low]
+      while (left < right) {
+        while (left < right && arr[right] > basic) {
+          right--
+        }
+        while (left < right && arr[left] <= basic) {
+          left++
+        }
+
+        if (left < right) {
+          const temp = arr[left]
+          arr[left] = arr[right]
+          arr[right] = temp
+        } else {
+          const temp = arr[low]
+          arr[low] = arr[left]
+          arr[left] = temp
+
+          quickSort(arr, low, left - 1)
+          quickSort(arr, right + 1, high)
+        }
+      }
+      return arr
+    }
+
+    let arr = [3, 6, 5, 8, 9, 2, 1, 4, 7]
+    console.log(quickSort(arr))
+    console.log(arr.sort())
+  </script>
+
+</body>
+
+</html>

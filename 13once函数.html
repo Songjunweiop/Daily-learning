@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+</head>
+
+<body>
+  <script>
+    function test() {
+      console.log('test')
+    }
+
+    var once = function(fn) {
+      var isFirst = true;
+      return function() {
+        if (isFirst) {
+          isFirst = !isFirst;
+          fn();
+        }
+      };
+    };
+
+    var b = once(test);
+    console.log(b)
+    b(); // 'test'
+    b(); // nothing
+    console.log(b)
+  </script>
+</body>
+
+</html>

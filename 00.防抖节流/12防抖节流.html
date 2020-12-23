@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .aaa {
+      height: 999999px;
+      width: 100%;
+      background-color: red;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="aaa"> asd</div>
+  <script>
+    // // 简单的防抖动函数
+    // function debounce(func, wait, immediate) {
+    //   // 定时器变量
+    //   var timeout;
+    //   return function() {
+    //     // 每次触发 scroll handler 时先清除定时器
+    //     clearTimeout(timeout);
+    //     // 指定 xx ms 后触发真正想进行的操作 handler
+    //     timeout = setTimeout(func, wait);
+    //   };
+    // };
+
+    // // 实际想绑定在 scroll 事件上的 handler
+    // function realFunc() {
+    //   console.log("Success");
+    // }
+
+    // // 采用了防抖动
+    // window.addEventListener('scroll', debounce(realFunc, 5000));
+    // // 没采用防抖动
+    // // window.addEventListener('scroll', realFunc);
+    function debounce(func, wait, immediate) {
+      var timeout;
+      return function () {
+        var context = this
+        var args = arguments;
+        var callNow = immediate && !timeout;
+
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        }, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+
+    var myEfficientFn = debounce(function () {
+      // 滚动中的真正的操作
+    }, 250);
+
+    // 绑定监听
+    window.addEventListener('resize', myEfficientFn);
+
+    function ones(func) {
+      var tag = true;
+      return function () {
+        if (tag == true) {
+          func.apply(null, arguments);
+          tag = false;
+        }
+        return undefined
+      }
+    }
+  </script>
+</body>
+
+</html>

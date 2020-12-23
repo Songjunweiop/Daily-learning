@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+</head>
+
+<body>
+
+  <script>
+    // function ajax(url, callback) {
+    //   let xml = new XMLHttpRequest();
+    //   xml.open("GET", url, true);
+    //   xml.send();
+    //   xml.onload = function() {
+    //     if (this.status == 200) {
+    //       callback(this.response)
+    //     } else {
+    //       throw new Error("失败")
+    //     }
+
+    //   }
+    // }
+    // ajax('', (res) => {
+    //   console.log("成功")
+    // })
+
+    function ajax(url) {
+      let xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          console.log('成功')
+        } else {
+          console.log('失败')
+        }
+      }
+      xmlhttp.open('GET', url)
+      xmlhttp.send()
+    }
+  </script>
+
+</body>
+
+</html>

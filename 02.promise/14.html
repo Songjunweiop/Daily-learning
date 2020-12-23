@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+</head>
+
+<body>
+  <script>
+    const promise1 = new Promise((resolve, reject) => {
+      console.log('1')
+      setTimeout(function () {
+        console.log('sadfsdd')
+        if (true) {
+          console.log('成功了')
+          resolve('最后成功')
+        } else {
+          console.log('失败了')
+          reject('最后失败了')
+        }
+      }, 1000)
+    })
+    promise1.then((res) => {
+      console.log(res + "这里是")
+    }).then(() => {
+      setTimeout(() => {
+        console.log('sjw')
+      }, 2000)
+    }).then(() => {
+      setTimeout(() => {
+        console.log('syj')
+      }, 1000)
+    }).catch((res) => {
+      console.log(res + "这是catch")
+    })
+    console.log('1', promise1);
+  </script>
+</body>
+
+</html>

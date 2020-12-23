@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+</head>
+
+<body>
+  <script>
+    let p1 = new Promise(function(resolve, reject) {
+      
+      if (true) {
+        resolve("这里成功了")
+      } else {
+        reject("这里失败了")
+      }
+    })
+    p1.then(sucmsg => {
+      console.log(sucmsg)
+      return new Promise(function(resolve) {
+        resolve("只要努力了，我最后还是成功的")
+      })
+    }, errmsg => {
+      console.log(errmsg)
+    }).then(msg => {
+      console.log(msg)
+    })
+  </script>
+</body>
+
+</html>
