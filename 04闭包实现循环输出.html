@@ -11,22 +11,21 @@
 </head>
 
 <body>
-
   <script>
-    class Request {
-      url = "aaa"
+    for (let i = 0; i < 5; i++) {
+      setTimeout(() => {
+        console.log(i)
+      }, 1000 * i);
     }
-    var r1 = new Request()
-    console.log(r1)
 
-    var r2 = new Request()
-    console.log(r2)
-
-    r1.url = "saddsf"
-    console.log(r2)
-    console.log(r1)
+    for (var b = 0; b < 5; b++) {
+      (function(b) {
+        setTimeout(() => {
+          console.log(b)
+        }, 1000 * b);
+      })(b)
+    }
   </script>
-
 </body>
 
 </html>

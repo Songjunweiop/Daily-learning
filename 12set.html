@@ -11,20 +11,20 @@
 </head>
 
 <body>
+
   <script>
-    for (let i = 0; i < 5; i++) {
-      setTimeout(() => {
-        console.log(i)
-      }, 1000 * i);
-    }
-    for (var b = 0; b < 5; b++) {
-      (function(b) {
-        setTimeout(() => {
-          console.log(b)
-        }, 1000 * b);
-      })(b)
-    }
+    const s = new Set();
+    [2, 3, 5, 4, 2, 2, 3, 5, 6].forEach(x => s.add(x))
+    console.log([...s])
+
+
+    let ary = ["a", "b", "c"];
+    console.log(ary)
+    console.log([...ary]) //a b c
+    console.log(...ary) //a b c
+    console.log("a", "b", "c") //a b c
   </script>
+
 </body>
 
 </html>

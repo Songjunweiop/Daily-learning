@@ -13,9 +13,18 @@
 <body>
 
   <script>
-    var a = "我在这两啥都好说大法师的"
-    console.log(a.split(""))
-    console.log(typeof(a.split("")))
+    class Request {
+      url = "aaa"
+    }
+    var r1 = new Request()
+    console.log(r1)
+
+    var r2 = new Request()
+    console.log(r2)
+
+    r1.url = "saddsf"
+    console.log(r1)
+    console.log(r2)
   </script>
 
 </body>
