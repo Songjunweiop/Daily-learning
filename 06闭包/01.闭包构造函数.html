@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // const Foo = ()=> {
+    //   var a = 1
+    //   const foo = () => {
+    //     this.a++
+    //   }
+    //   foo()
+    //   return { id: a }
+    // }
+    // const Foo = () => {
+    //   this.id = 1
+    // }
+
+    var i =0
+    function Foo() {
+      const foo = () => {
+        i++
+      }
+      foo()
+      return { id: i }
+    }
+
+
+    // function Foo(){
+    //   thi
+    // }
+    var b = new Foo()
+    var c = new Foo()
+    console.log(b)
+    console.log(c)
+  </script>
+
+</body>
+
+</html>

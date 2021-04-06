@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // 这是匿名函数test
+    // 怎么才能让i每次都增加1
+    // 不让内存回收机制把i清除，使用闭包（在闭包内使用i）
+    // 这个函数其实只声明了一次 
+    var test = (function () {
+      console.log("没想到吧，我这里只输出一次");
+      var i = 0;
+      console.log(i)  
+      return function () {
+        console.log(i);
+        return i++;
+      }
+    })();
+
+    console.log("........");
+    test();     //0
+    test();     //1
+    test();     //2
+  </script>
+
+</body>
+
+</html>

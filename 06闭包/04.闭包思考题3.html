@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+
+    var test = function () {
+      console.log("我这里要输出几次");  // 只有声明的时候才会输出一次
+      var i = 0;
+      console.log(i)
+      return function () {
+        console.log(i);
+        return i++;
+      }
+    };
+
+    console.log("........");
+    var a = test();
+    a();    
+    a();    
+    a();    // 这三次都是访问的同一个地址的i
+
+    // var b = test()  // 使用一个新的内存地址来存放b函数
+    // b();    // 所以这里是 i = 0
+
+  </script>
+
+</body>
+
+</html>
