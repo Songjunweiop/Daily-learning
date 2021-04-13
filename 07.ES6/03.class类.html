@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // ES5 方式定义一个类
+    function Foo() { this.kind = 'foo' }
+    Foo.staticMethod = function () { console.log('静态方法') }
+    Foo.prototype.doThis = function () { console.log(`实例方法 kind:${this.kind}`) }
+
+    // ES6 方式定义一个类
+    class ESFoo {
+      /* 构造函数 */
+      constructor() { this.kind = 'foo' }
+      /* 静态方法 */
+      static staticMethod() { console.log('静态方法') }
+      /* 实例方法 */
+      doThis() {
+        console.log(`实例方法 kind:${this.kind}`)
+      }
+    }
+    // 类的继承
+    class Bar extends Foo {
+      constructor() {
+        super()
+        this.type = 'bar'
+      }
+      doThat() {
+        console.log(`实例方法 type:${this.type} kind:${this.kind}`)
+      }
+    }
+    const bar = new Bar()
+    bar.staticMethod() //父类的静态方法不会被继承
+    bar.doThat()   // 实例方法 type:bar kind:foo
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -15,6 +15,9 @@
   <script>
     const s = new Set();
     [2, 3, 5, 4, 2, 2, 3, 5, 6].forEach(x => s.add(x))
+    // 步骤
+    console.log(s)
+    console.log(...s)
     console.log([...s])
 
 
@@ -23,6 +26,17 @@
     console.log([...ary]) //a b c
     console.log(...ary) //a b c
     console.log("a", "b", "c") //a b c
+
+    var aaa = [2, 3, 5, 4, 2, 2, 3, 5, 6]
+    console.log([...new Set(aaa)]) //数组去重
+
+    var bbb = 'aabbccddefgg'
+    console.log(new Set(bbb))
+    console.log(...new Set(bbb))
+    console.log([...new Set(bbb)])
+    console.log([...new Set(bbb)].join(''))// 字符串去重
+
+
   </script>
 
 </body>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // JS中值类型分为原始值类型和对象值类型
+    // 对象值类型： Number, String, Boolean, null, undefined
+    // 引用值类型：object, function, array
+
+    const num = 123
+    console.log(typeof num)
+    console.log(typeof 123)
+    console.log(typeof new Number(123)) //object
+
+
+    const str = 'abcdefg'
+    console.log(typeof str)
+    console.log(typeof 'abcdefg')
+    console.log(typeof new String('abcdefg')) //object
+    console.log('abcdefg')
+    console.log(new String('abcdefg')) //object
+
+    const bool = false
+    console.log(typeof bool)
+    console.log(typeof false)
+    console.log(typeof new Boolean(false)) //object
+
+
+    const nul = null
+    console.log(typeof nul)
+    console.log(typeof null)
+    
+
+    const und = undefined
+    console.log(typeof und)
+    console.log(typeof undefined)
+
+    const obj = { a: 1, b: 2 }
+    console.log(typeof obj)
+    console.log(typeof { a: 1, b: 2 })
+
+    const func = () => { }
+    console.log(typeof func)
+    console.log(typeof Function)
+
+    const ary = [1, 2, 3]
+    console.log(typeof ary)
+    console.log(typeof [1, 2, 3])
+
+
+
+
+  </script>
+</body>
+
+</html>
