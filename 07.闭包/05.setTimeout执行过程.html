@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // undefined func 10 
+    setTimeout(function () {
+      console.log(a); //10
+    }, 0);
+
+    var a = 10;
+
+    console.log(b);//undefined
+    console.log(fn);
+
+    var b = 20;
+
+    function fn() {
+      setTimeout(function () {
+        console.log('setTImeout 10ms.');
+      }, 10);
+    }
+    fn.toString = function () {
+      return 30;
+    }
+    console.log(fn);
+
+    setTimeout(function () {
+      console.log('setTimeout 20ms.');
+    }, 20);
+
+    fn();
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

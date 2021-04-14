@@ -18,7 +18,9 @@
     var object = {
       name: "My Object",
       getNameFunc: function () {
+        // console.log(this)
         return function () {
+          // console.log(this)
           return this.name;   //哪里调用，就使用哪里的this
         };
       }
@@ -29,17 +31,17 @@
 
 
 
-    var name = "The Window";
-    var object = {
-      name: "My Object",
-      getNameFunc: function () {
-        var that = this;
-        return function () {
-          return that.name;
-        };
-      }
-    };
-    alert(object.getNameFunc()());
+    // var name = "The Window";
+    // var object = {
+    //   name: "My Object",
+    //   getNameFunc: function () {
+    //     var that = this;
+    //     return function () {
+    //       return that.name;
+    //     };
+    //   }
+    // };
+    // alert(object.getNameFunc()());
   </script>
 
 </body>
