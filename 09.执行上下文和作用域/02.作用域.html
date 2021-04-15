@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+
+    // function foo() {
+    //   let a = 1;
+    //   let b = 2;
+    //   function sum() {
+    //     console.log(a + b)
+    //   }
+    //   sum();	// 可以访问，因为sum的作用域是foo作用域的子作用域
+    // }
+    // foo();
+
+
+    // console.log([1, 2] == [1, 2])
+    // console.log("1,2" == [1, 2])
+
+    //`````````````````````````````````````
+
+    var arr = [1, 2, 3, 4];
+
+    function Q() {
+      for (var i = 0; i < arr.length; i++) {
+        console.log(i);
+      }
+    }
+    Q()
+
+    console.log(i); // 输出undefined，因为i在函数作用域里
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+
+
+    var a = { key1: "11111", key2: ["你", "我"] }
+
+    const Copy = (p) => {
+      var c = {}
+      for (var i in p) {
+        console.log(i)
+        c[i] = p[i]
+      }
+      return c
+    }
+
+    var b = Copy(a);
+
+    a.key1 = "22222"
+    console.log(b.key1)
+    // a.key2 = ["你", "我", "他"]   // 坑！ 这里是重新给a.key2 赋值，相当于换了个内存地址
+    a.key2.push("我是A") //这里没有拷贝过去，这是第二层
+    b.key2.push("我是B") //这里没有拷贝过去，这是第二层
+    b.key3 = ["我是b的key3添加的值"]
+
+
+
+    console.log(a,b)
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

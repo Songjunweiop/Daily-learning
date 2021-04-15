@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+
+    //ES6实现浅拷贝的方法
+    var a = { name: "暖风" }
+    var b = Object.assign({}, a);
+    b.age = 18;
+    console.log(a.age); //undefined
+
+
+    // 数组
+    var a = [1, 2, 3];
+    var b = a.slice();
+    a.push(4)
+    console.log(a)
+    console.log(b)
+
+
+    var a = [1, 2, 3];
+    var b = a.concat();
+    b.push(4);
+    console.log(b)//1,2,3,4
+    console.log(a)//1,2,4
+
+
+    var a = [1, 2, 3];
+    var b = [...a]
+    console.log(b)//1,2,3,4
+    console.log(a)//1,2,4
+
+
+
+
+
+  </script>
+</body>
+
+</html>

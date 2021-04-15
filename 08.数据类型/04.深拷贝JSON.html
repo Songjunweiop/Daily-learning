@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    //使用JSON的方法实现深拷贝
+    var a = {
+      age: 22,
+      name: {
+        name1: "小蜜蜂",
+        name2: "wesley"
+      }
+    }
+    b = {...a}// 浅拷贝
+    
+    var b = JSON.parse(JSON.stringify(a)) 
+    
+    b.age = 33
+    a.age = 44
+    b.name.name1 = "sjw"
+
+
+    console.log(b)
+    console.log(a)
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

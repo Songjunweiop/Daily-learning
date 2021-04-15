@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    var a = {
+      age: 22,
+      name: {
+        name1: "小蜜蜂",
+        name2: "wesley"
+      }
+    }
+    const deepCopy = (a, c) => {
+      var c = c || {}
+      for(var i in a){
+        console.log(i)
+        if(typeof a[i] === "object"){
+          c[i] = a[i].constructor === Array ? [] : {}
+          // console.log(c[i])
+          deepCopy(a[i], c[i])
+        }else{
+          c[i] = a[i]
+        }
+      }
+      return c
+    }
+    b = deepCopy(a)
+
+    a.name.name3 = "sjw"
+    console.log(a)
+    console.log(b)
+
+
+
+
+  </script>
+</body>
+
+</html>
