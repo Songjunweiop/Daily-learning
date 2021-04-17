@@ -35,12 +35,12 @@
     console.log(typeof bool)
     console.log(typeof false)
     console.log(typeof new Boolean(false)) //object
- 
+
 
     const nul = null
     console.log(typeof nul)
     console.log(typeof null)
-    
+
 
     const und = undefined
     console.log(typeof und)
@@ -56,8 +56,26 @@
 
     const ary = [1, 2, 3]
     console.log(typeof ary)
-    console.log(typeof [1, 2, 3])
+    console.log(typeof [1, 2, 3]);
 
+    (function () {
+      console.log(arguments);
+    })();
+
+
+    var foo = {
+      bar: function () { return this.baz; },
+      baz: 1
+    };
+
+    (function () {
+      console.log(typeof arguments[0]())
+    })(foo.bar);
+
+    console.log([] == ![])
+    console.log(Function instanceof Object);
+    console.log(Object instanceof Function);
+    console.log((function f() { }).__proto__ === Function.prototype);
 
 
 

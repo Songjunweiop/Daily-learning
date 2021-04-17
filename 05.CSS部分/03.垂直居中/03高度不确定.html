@@ -8,14 +8,17 @@
   <title>Document</title>
   <style>
     .aaa{
-      height: 400px;
-      width: 400px;
+      height: 600px;
+      width: 600px;
       background-color: rgb(227, 252, 169);
-      display: flex;
-      align-items: center;
+      position: relative;
     }
     .bbb{
       height: 200px;
+      position: absolute;
+      top: 50%;/* 相对于父容器高度的50% */
+      transform: translate(-50%, -50%);/* 相对于子容器自身高度和宽度的50% */
+      left: 50%;
       width: 200px;
       background-color: #fff;
     }
