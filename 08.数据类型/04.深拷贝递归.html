@@ -24,11 +24,12 @@
     const deepCopy = (a, c) => {
       var c = c || {}
       for(var i in a){
-        console.log(i)
+        // console.log(i)
         if(typeof a[i] === "object"){
           c[i] = a[i].constructor === Array ? [] : {}
           // console.log(c[i])
-          deepCopy(a[i], c[i])
+          c[i] = deepCopy(a[i], c[i])
+          // console.log(c[i])
         }else{
           c[i] = a[i]
         }

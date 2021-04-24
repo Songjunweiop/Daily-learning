@@ -14,32 +14,35 @@
 <body>
 
   <script>
-    // const Foo = ()=> {
-    //   var a = 1
-    //   const foo = () => {
-    //     this.a++
-    //   }
-    //   foo()
-    //   return { id: a }
-    // }
+    function Foo(){
+      var a = 1
+      return function foo() {
+        a++
+        console.log({ 'id': a }) 
+      }
+    }
     // const Foo = () => {
     //   this.id = 1
     // }
 
-    var i =0
-    function Foo() {
-      const foo = () => {
-        i++
-      }
-      foo()
-      return { id: i }
-    }
+    // var i =0
+    // function Foo() {
+    //   const foo = () => {
+    //     i++
+    //   }
+    //   foo()
+    //   return { id: i }
+    // }
 
 
     var b = new Foo()
-    var c = new Foo()
-    console.log(b)
-    console.log(c)
+    // console.log(b)
+    b()
+    b()
+    b()
+    // var c = new Foo()
+    // console.log(b)
+    // console.log(c)
   </script>
 
 </body>

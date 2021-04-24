@@ -14,19 +14,23 @@
 <body>
 
   <script>
-    for (var i = 0; i <= 6; i++) {
-      function aa(){
-        console.log(i)
-        console.log(this)
-      }
-      // const aa = () => {
-      //   console.log(i)
-      //   console.log(this)
-      // }
-      aa()
-    }
-  </script>
+    const a = [1, 2, 3]
+    
+    console.log(typeof a) // object
 
+    console.log(a.constructor === Array) //true
+
+    console.log(a instanceof Array) //true
+
+    console.log(Array.isArray(a)) //true
+
+    
+
+
+
+
+
+  </script>
 </body>
 
 </html>

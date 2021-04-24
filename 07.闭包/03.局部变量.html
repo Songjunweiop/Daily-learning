@@ -17,14 +17,16 @@
     function f1() {
       var n = 999;
       // const nAdd = function () { n += 1 }
-      nAdd = function () { n += 1 }  //未使用var声明？？
+      nAdd = function () { 
+        n += 1
+      }  //未使用var声明？？
       function f2() {
         console.log(n);
       }
       return f2;
     }
-    f1()()
-    nAdd()
+    // f1()()
+    // nAdd()
     
 
     

@@ -14,32 +14,77 @@
 <body>
 
   <script>
-// 基础用法
-// const test1 = function (参数1, 参数2, 参数N) { 函数声明 }
-const test1 = (参数1, 参数2, 参数N) => { 函数声明 }
+    // 基础用法
+    // const test1 = function (参数1, 参数2, 参数N) { 函数声明 }
+    const test1 = (参数1, 参数2, 参数N) => { 函数声明 }
 
-// 当只有一个参数时，圆括号是可选的
-// const test2 = (单一参数) => { 函数声明 }
-const test2 = 单一参数 => { 函数声明 }
+    // 当只有一个参数时，圆括号是可选的
+    // const test2 = (单一参数) => { 函数声明 }
+    const test2 = 单一参数 => { 函数声明 }
 
-// 没有参数时，圆括号不能省略
-const test3 = () => { 函数声明 }
+    // 没有参数时，圆括号不能省略
+    const test3 = () => { 函数声明 }
 
-// 当函数体只是 return 一个单一表达式时，可以省略花括号和 return 关键词
-// const test4 = () { return 表达式（单一） }
-const test4 = () => 表达式(单一)
+    // 当函数体只是 return 一个单一表达式时，可以省略花括号和 return 关键词
+    // const test4 = () { return 表达式（单一） }
+    const test4 = () => 表达式(单一)
 
-// 函数体返回对象字面表达式时，如果省略花括号和 return 关键词，返回值需要加括号
-// const test5 = () => { return {foo: 'bar'} }
-const test5 = () => ({foo: 'bar'})  // 输出 {foo: 'bar'}
-// const test7 = () => {foo: 'bar'}    // 输出 undefined，大括号被识别为代码块
+    // 函数体返回对象字面表达式时，如果省略花括号和 return 关键词，返回值需要加括号
+    // const test5 = () => { return {foo: 'bar'} }
+    const test5 = () => ({ foo: 'bar' })  // 输出 {foo: 'bar'}
+    // const test7 = () => {foo: 'bar'}    // 输出 undefined，大括号被识别为代码块
 
-// 参数如果只有一个，可以不加圆括号 ()；
-// 没有参数时，不能省略圆括号 ()；
-// 如果函数体只返回单一表达式，那么函数体可以不使用大括号 {} 和 return，直接写表达式即可；
-// 在 3 的基础上，如果返回值是一个对象字面量，那么返回值需要加圆括号 ()，避免被识别为代码块。
+    // 参数如果只有一个，可以不加圆括号 ()；
+    // 没有参数时，不能省略圆括号 ()；
+    // 如果函数体只返回单一表达式，那么函数体可以不使用大括号 {} 和 return，直接写表达式即可；
+    // 在 3 的基础上，如果返回值是一个对象字面量，那么返回值需要加圆括号 ()，避免被识别为代码块。
+
+    // var obj = {
+    //   age: 22,
+    //   show: function(){
+    //     console.log(this.age)
+    //   }
+    // }
+    // obj.show()
 
 
+    var obj = {
+      age: 22,
+      show(){
+        console.log(this.age)
+      }
+    }
+    var tom = {
+      age: 100
+    }
+    obj.show.call(tom)
+
+
+    var obj = {
+      age: 22,
+      show: () => {
+        console.log(this)
+        console.log(this.age)
+      }
+    }
+    var tom = {
+      age: 18
+    }
+    obj.show()
+    obj.show.call(tom)
+
+
+
+    // var obj = {
+    //   age: 22,
+    //   show: function () {
+    //     (() => {
+    //       console.log(this)
+    //       console.log(this.age)
+    //     })()
+    //   }
+    // }
+    // obj.show()
 
 
   </script>
