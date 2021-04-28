@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    var aa = {
+      age: 22,
+      name: 'wesley',
+      show: function() {
+        console.log(this)
+        console.log(this.age,this.name)
+      }
+    }
+    aa.show()
+
+    var bb = {
+      age: 22,
+      name: 'Bee',
+      show(){
+        console.log(this)
+        console.log(this.age,this.name)
+      }
+    }
+    bb.show()
+
+    
+    var cc = {
+      age: 22,
+      name: 'sjw',
+      show: () =>{
+        console.log(this)
+        console.log(this.age,this.name)
+      }
+    }
+    cc.show()
+
+    
+    console.log(aa.constructor)
+    console.log(aa.constructor.prototype)
+    console.log(aa.__proto__)
+
+  </script>
+</body>
+
+</html>

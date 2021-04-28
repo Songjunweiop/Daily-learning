@@ -14,12 +14,24 @@
 <body>
 
   <script>
-
-    var fn = () =>{
-      
-      console.log(this)
+    var a = 100
+    function aaa(){
+      var a = 20
+      function bbb(){
+        console.log(a)
+      }
+      return bbb()
     }
-    fn()
+    aaa()
+
+    function ccc(){
+      var a = 90
+      function ddd(){
+        console.log(a)
+      }
+      return ddd
+    }
+    ccc()()
 
 
 
