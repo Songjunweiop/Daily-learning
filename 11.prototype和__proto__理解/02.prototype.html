@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // 原型对象上的方法是给实例使用的
+    // console.log(Date.prototype)
+    // const time = new Date()
+
+    // console.log(time)
+    // console.log(time.__proto__)  //这里的time的__proto__属性是Date的prototype给的
+     
+
+    function Gouzhaoqi(){
+      this.x = 1,
+      this.fun = function(){
+        console.log(2)
+      }
+
+    }
+    console.log(Object.prototype)
+    console.log(Function.prototype)
+    console.log(Gouzhaoqi.__proto__)
+    console.log(Function.prototype === Gouzhaoqi.__proto__)
+
+    console.log(Gouzhaoqi.__proto__.__proto__)
+    console.log(Gouzhaoqi.prototype)
+
+    const shili = new Gouzhaoqi()
+    console.log(shili.__proto__)
+    console.log(shili.x)
+    console.log(shili)
+
+    //  构造器上的原型对象指向的地址  和   实例上的__proto__原型对象指向的地址是同一个地址
+    
+    // 验证： 改变值
+    Gouzhaoqi.prototype.changeme = function(){
+      console.log('changeme')
+    }
+    // console.log(Gouzhaoqi.prototype)
+    // console.log(shili.__proto__) //当我修改了构造函数的prototype原型属性时，
+                                  // 已经在修改之前生成的实例上的__proto__属性也会改变
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

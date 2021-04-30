@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .hong{
+      width: 500px;
+      height: 500px;
+      background-color: rgb(158, 52, 52);
+      float: left;
+      /* position: absolute; */  /*这里使用absolute和float都会使其脱离文档流，而其他元素这会在它的下方布局*/
+    }
+    .lan{
+      width: 400px;
+      height: 600px;
+      background-color: rgb(52, 158, 135);
+      z-index: 999999999999; /*这里设置z-index是没有用的*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hong"></div>
+  <div class="lan"></div>
+  <script>
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

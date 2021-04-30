@@ -25,10 +25,11 @@
     //构造器, 指向该对象的构造函数
     console.log("s1.constructor:", s1.constructor)
     console.log("Stu.constructor:", Stu.constructor)
+    console.log(Stu.__proto__)
     console.log(s1.constructor === Stu.constructor)  //false
 
 
-    // __proto__
+    // __proto__    隐式原型
     // 原型链 作用就是当访问一个对象的属性时，如果该对象内部不存在这个属性，
     // 那么就会去它的__proto__属性所指向的那个对象（父对象）里找，一直找，
     // 直到__proto__属性的终点null，再往上找就相当于在null上取值，会报错。
@@ -39,14 +40,16 @@
     console.log(s1.__proto__.__proto__)
     console.log(s1.__proto__.constructor)
     console.log(s1.__proto__.constructor === s1.constructor)
-    //prototype   
+    //prototype   显式原型
     // 函数独有的属性
     // 构造函数的 prototype 就是给予 创建出来的对象的__proto__
     console.log(Stu.prototype)
     console.log(s1.__proto__)
-    console.log(s1.__proto__ === s1.constructor)
-    console.log(s1.__proto__ == Stu.prototype)
+    console.log(s1.__proto__ === Stu.prototype)
     console.log()
+
+
+    // __proto__ 和  prototype  都是引用地址，两个引用的地址是同一个地址
 
 
 

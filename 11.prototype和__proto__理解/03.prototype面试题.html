@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+
+    const A = function(){
+      
+    }
+    A.prototype.x = 1
+
+    var b = new A()
+
+    console.log(b.x)
+
+    // 如果我直接修改prototype原型上的一个属性值
+    A.prototype.x = 2
+    console.log(b.x)
+
+
+    // 如果我修改prototype整个原型为一个新的对象呢？
+    A.prototype = {
+      x : 3,
+      y : 4
+    }
+    console.log(b.x)
+
+    var c = new A()
+    console.log(c.x,c.y)
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

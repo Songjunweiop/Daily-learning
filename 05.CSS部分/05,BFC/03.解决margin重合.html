@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .fa{
+      border: 1px solid slateblue;
+    }
+    .aaa {
+      border: 1px solid skyblue;
+      width: 300px;
+      height: 100px;
+      margin: 20px;/* 一、设置margin只会会发现两两盒子之间的margin值为20px，也就是margin重合了*/
+      
+    }
+    .bbb{
+      overflow: hidden;  /* 二、为父元素设置overflow不为visible*/
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="fa">
+    <div class="bbb">
+      <div class="aaa"></div>
+    </div>
+    
+    <div class="aaa"></div>
+    <div class="aaa"></div>
+    <div class="aaa"></div>
+  </div>
+  <script>
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
