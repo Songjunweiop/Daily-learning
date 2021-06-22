@@ -11,19 +11,22 @@
 </head>
 
 <body>
-
+  <h2>在new一个类的时候，要加 new 关键词，（注意this的指向）</h2>
   <script>
     var name = "Jay";
     function Person(name) {
+      console.log(this);
       this.name = name;
       console.log(this.name);
     }
     var a = Person("Tom");
     console.log(a)
     console.log(name);
-    console.log(a);
-    var b = new Person(" Michaol");
+
+    var name = "Jay";
+    var b = new Person("Michaol");
     console.log(b);
+    console.log(name);
 
   </script>
 

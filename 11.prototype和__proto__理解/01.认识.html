@@ -36,7 +36,8 @@
     // 通过__proto__属性将对象连接起来的这条链路即我们所谓的原型链
     console.log(s1.valueOf === s1.__proto__.valueOf)   
     console.log(s1.valueOf === s1.__proto__.__proto__.valueOf)// 一层一层的去找
-
+    console.log(s1);
+    console.log(s1.__proto__)
     console.log(s1.__proto__.__proto__)
     console.log(s1.__proto__.constructor)
     console.log(s1.__proto__.constructor === s1.constructor)
@@ -46,7 +47,6 @@
     console.log(Stu.prototype)
     console.log(s1.__proto__)
     console.log(s1.__proto__ === Stu.prototype)
-    console.log()
 
 
     // __proto__ 和  prototype  都是引用地址，两个引用的地址是同一个地址
