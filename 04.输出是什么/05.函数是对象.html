@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    function bark() {
+      console.log('aaa')
+    }
+
+    bark.animal = 'bbb'//会报错吗
+
+
+    console.log(bark.animal);
+    // 这在 JavaScript 中是可以的，因为函数是对象！（除了基本类型之外其他都是对象）
+    // 函数是一个特殊的对象。你写的这个代码其实不是一个实际的函数。函数是一个拥有属性的对象，并且属性也可被调用。
+
+
+
+
+
+  </script>
+</body>
+
+</html>
