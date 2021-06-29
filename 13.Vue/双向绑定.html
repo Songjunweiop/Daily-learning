@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    let data = {
+      name
+    }
+    Object.defineProperty(data, 'name', {
+      set: function(value){
+        name = value
+        console.log('我给name添加了一个新值：'+ value)
+      },
+      get: function() {
+        console.log('我读取了这个name的值' + name)
+        return name
+      }
+    })
+    data.name = 'JavaScript'
+    console.log(data.name)
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

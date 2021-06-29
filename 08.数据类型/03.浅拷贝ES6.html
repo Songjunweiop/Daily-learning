@@ -14,33 +14,38 @@
 <body>
 
   <script>
+    let a = { a: 1, b: 2 }
+    let b = { a: 10, b: 20 }
+    Object.assign(a, b)
+    console.log(a);
+    console.log(b);
 
-    //ES6实现浅拷贝的方法
-    var a = { name: "暖风" }
-    var b = Object.assign({}, a);
-    b.age = 18;
-    console.log(a.age); //undefined
-
-
-    // 数组
-    var a = [1, 2, 3];
-    var b = a.slice();
-    a.push(4)
-    console.log(a)
-    console.log(b)
+    // //ES6实现浅拷贝的方法
+    // var a = { name: "暖风" }
+    // var b = Object.assign({}, a);
+    // b.age = 18;
+    // console.log(a.age); //undefined
 
 
-    var a = [1, 2, 3];
-    var b = a.concat();
-    b.push(4);
-    console.log(b)//1,2,3,4
-    console.log(a)//1,2,4
+    // // 数组
+    // var a = [1, 2, 3];
+    // var b = a.slice();
+    // a.push(4)
+    // console.log(a)
+    // console.log(b)
 
 
-    var a = [1, 2, 3];
-    var b = [...a]
-    console.log(b)//1,2,3,4
-    console.log(a)//1,2,4
+    // var a = [1, 2, 3];
+    // var b = a.concat();
+    // b.push(4);
+    // console.log(b)//1,2,3,4
+    // console.log(a)//1,2,4
+
+
+    // var a = [1, 2, 3];
+    // var b = [...a]
+    // console.log(b)//1,2,3,4
+    // console.log(a)//1,2,4
 
 
 
