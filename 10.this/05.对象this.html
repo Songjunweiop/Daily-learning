@@ -27,9 +27,11 @@
     var bb = {
       age: 22,
       name: 'Bee',
+      myname: this,
       show(){
         console.log(this)
         console.log(this.age,this.name)
+        console.log(this.myname)
       }
     }
     bb.show()
