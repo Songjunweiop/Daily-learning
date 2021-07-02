@@ -29,6 +29,11 @@
     const d = {...b, ...a}
     console.log(d)
 
+    const e = Object.assign(a, b)  // 把b的值合并到 a 中，所以会改变 a 的值
+    console.log(a)
+    console.log(b)
+    console.log(e)
+
 
 
 

@@ -22,11 +22,11 @@
 
     var b = new A()
 
-    console.log(b.x)
+    console.log(b.x)  //1
 
     // 如果我直接修改prototype原型上的一个属性值
     A.prototype.x = 2
-    console.log(b.x)
+    console.log(b.x)  //2
 
 
     // 如果我修改prototype整个原型为一个新的对象呢？
@@ -34,10 +34,10 @@
       x : 3,
       y : 4
     }
-    console.log(b.x)
+    console.log(b.x)  //2
 
     var c = new A()
-    console.log(c.x,c.y)
+    console.log(c.x,c.y)  // 3 4
 
 
 

@@ -18,10 +18,11 @@
     var object = {
       name: "My Object",
       getNameFunc: function () {
-        // console.log(this)
+        console.log(this)     // 这里的this是指向object的
+        const that = this
         return function () {
-          // console.log(this)
-          return this.name;   //哪里调用，就使用哪里的this
+          // console.log(this)    // 这里的this是指向全局的
+          return that.name;   //哪里调用，就使用哪里的this
         };
       }
     };

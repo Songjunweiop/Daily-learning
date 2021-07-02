@@ -23,13 +23,11 @@
     console.log(typeof 123)
     console.log(typeof new Number(123)) //object
 
-
     const str = 'abcdefg'
     console.log(typeof str)
     console.log(typeof 'abcdefg')
     console.log(typeof new String('abcdefg')) //object
-    console.log('abcdefg')
-    console.log(new String('abcdefg')) //object
+    console.log(new String('abcdefg'))
 
     const bool = false
     console.log(typeof bool)
@@ -40,7 +38,6 @@
     const nul = null
     console.log(typeof nul)
     console.log(typeof null)
-
 
     const und = undefined
     console.log(typeof und)
@@ -64,11 +61,12 @@
 
 
     var foo = {
-      bar: function () { return this.baz; },
+      bar: function () { console.log(this.baz) },
       baz: 1
     };
 
     (function () {
+      console.log(arguments[0])
       console.log(typeof arguments[0]())
     })(foo.bar);
 
