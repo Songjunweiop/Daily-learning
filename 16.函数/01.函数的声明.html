@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // 函数声明
+    // 这种会有一个函数声明提升，所以可以在声明函数前调用这个函数
+    function fun1(a){
+      console.log(a)
+    }
+
+    // 函数表达式
+    // 这种没有函数声明提升，使用const，所以必须在声明后调用该函数
+    const fun2 = function(a){
+      console.log(a)
+    }
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

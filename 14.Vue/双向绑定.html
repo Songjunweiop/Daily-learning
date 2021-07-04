@@ -15,9 +15,9 @@
 
   <script>
     let data = {
-      name
+      name: ''
     }
-    Object.defineProperty(data, 'name', {
+    Object.defineProperty(data, 'name', { 
       set: function(value){
         name = value
         console.log('我给name添加了一个新值：'+ value)
