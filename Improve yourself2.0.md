@@ -194,11 +194,11 @@ https://blog.csdn.net/weixin_43443341/article/details/92806236
 
 http://interview.poetries.top/docs/simply.html#_4-%E9%A2%84%E5%8A%A0%E8%BD%BD
 
-## 15.数组和链表的区别
+## 15. 数组和链表的区别
 
 https://blog.csdn.net/qq_25806863/article/details/70607204
 
-## 16.import .. from 和import {..} from 区别
+## 16. import .. from 和import {..} from 区别
 
 我的理解：
 
@@ -208,11 +208,23 @@ import {..} from 是因为那个文件中有多个export 导出的模块，所�
 
 https://blog.csdn.net/qq_36657291/article/details/81327423
 
-## 17.ReferenceError和TypeError区别
+## 17. ReferenceError和TypeError区别
 
 1.首先：字面上的意思分别为引用错误和类型错误； 
 
 2.作用域：ReferenceError就是在作用域中找不到、TypeError是在作用域中找到了但是 做了它不可能做的事情。
+
+## 18. 事件流
+
+https://www.cnblogs.com/liuafan/p/9525899.html
+
+在DOM2级事件中规定的事件流有三个：1.事件捕获阶段，2.处于目标阶段，3.事件冒泡阶段
+
+比如说，当点击一个页面的btn按钮，点击时，document对象首先会接收到click事件，然后事件沿着DOM树，逐级向下，一直传播到btn按钮上，此时就处于处于目标阶段，最后事件又沿着DOM树向上，有传播回文档
+
+## 19. 事件委托
+
+比如一个ul标签下有很多个li标签，我们得为每个li标签写一个事件函数 ，但是如果每个li标签都得写一个这样的事件的话，后期的维护工作就特别麻烦，编写代码特别繁琐，并且如果要添加一个新的li标签，又得写一个这样的事件函数，所以我们把这个监听函数写在父元素身上，当子元素监听到有事件产生的时候就向父元素冒泡，父元素在通过判断事件发生的类型，做出函数处理，这样，新添加的子元素也会有监听函数
 
 # 二、浏览器部分
 
