@@ -1002,7 +1002,58 @@ https://www.cnblogs.com/flamestudio/p/11965991.html
 
 
 
+## 2. 编辑功能
 
+点击列表后面的编辑按钮，没有请求接口，而是传入scope.row到编辑弹框中，然后对弹框内容直接赋值
 
+```js
+	showEditDialog(site) {
+      
+      this.siteform = site;
+      this.dialogTitle = "编辑站点";
+      this.adddialogVisible = true;
+    },
+```
 
+但是这样关闭之后，table中的这条数据会改改变
+
+# 八、一些总结
+
+#### 1. 对数据的处理，多使用扩展运算符
+
+```js
+this.siteform = { ...site, person: site.person.split(",") }
+```
+
+#### 2. 在vue中动态渲染，和在react中动态渲染
+
+vue：
+
+可以使用v-if 或者v-show ，通过改变绑定的值，去动态渲染
+
+这样的麻烦就是每次都得通过条件去更改这个绑定的值
+
+react：
+
+可以直接在jsx中判断，同时直接渲染
+
+#### 3. 使用vue的dialog表单
+
+当添加、编辑和详情公用一个dialog表单时，必须在关闭dialog 的时候重置一下表单，否则会出现不必要的表单验证提醒
+
+#### 4. vue中点击编辑表单
+
+点击编辑按钮，通过scope.row传过来的值，直接赋值给表单绑定的form，在进行更改的时候是会出现表单元素改不了
+
+解决：深拷贝，可以使用es6的扩展运算符
+
+```js
+showChangeDialog(work) {
+    this.changeForm = {};
+    this.changeDialogVisible = true;
+    // this.changeForm.consId = work.id;
+    // this.changeForm.status = work.status; //这里会导致更改状态的时候表单还是显示的原来的work中的status
+    this.changeForm = {...work}
+},
+```
 
