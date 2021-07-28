@@ -1057,3 +1057,21 @@ showChangeDialog(work) {
 },
 ```
 
+#### 5. websocket
+
+```js
+	const ws = new WebSocket(this.socketBASEURL + "outOfEf");
+    ws.onopen = () => {
+      console.log("ws连接状态：" + ws.readyState);
+      //连接成功则发送一个数据
+    };
+    ws.onmessage = (msg) => {
+      console.log(msg);
+      if (msg.data !== "连接成功") {
+        console.log(msg.data);
+        let warnWorkData = JSON.parse(msg.data);
+        console.log(warnWorkData)
+      }
+    };
+```
+
