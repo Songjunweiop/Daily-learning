@@ -1075,3 +1075,35 @@ showChangeDialog(work) {
     };
 ```
 
+#### 6.处理tree-table中渲染的id重复
+
+为row-key绑定函数，返回一个新值
+
+```vue
+     <el-table
+        class="table-contain"
+        :data="markerGroupList"
+        style="overflow: auto;"
+        :row-key="getRowKey"  //注意这里不用写成getRowKey(row)
+        :tree-props="{ children: 'markers' }"
+      >
+```
+
+```js
+   getRowKey(row) {
+      if (row.groupName) {
+        return row.id;
+      } else {
+        return row.id + Math.random(); // 处理一下子级的id，因为id会重复
+      }
+    },
+```
+
+#### 7.图片100%自适应缩放
+
+```css
+  background: url('../assets/backgroundBorder.png') no-repeat;
+  <--background-size: 100%;--> 
+  background-size: 100% 84.7vh;// 这里设置宽度和高度
+```
+
