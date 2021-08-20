@@ -439,7 +439,7 @@ https://www.cnblogs.com/wind-lanyan/p/6978084.html
 
 https://blog.csdn.net/zwkkkk1/article/details/79678177
 
-iIE盒模型：width =  content +  padding + border
+IE盒模型：width =  content +  padding + border
 
 W3C标准盒模型：width = content
 

@@ -14,8 +14,8 @@
 <body>
 
   <script>
-    //使用JSON的方法实现深拷贝
-    var a = {
+    // 使用JSON的方法实现深拷贝
+    let a = {
       age: 22,
       name: {
         name1: "小蜜蜂",
@@ -24,15 +24,112 @@
     }
     // b = {...a}// 浅拷贝
     console.log(JSON.stringify(a))
-    var b = JSON.parse(JSON.stringify(a)) 
-    
+    let b = JSON.parse(JSON.stringify(a))
+
     b.age = 33
     a.age = 44
     b.name.name1 = "sjw"
 
 
     console.log(b)
-    console.log(a)
+    // console.log(a)
+
+    // const linkList = [
+    //   {
+    //     'id': 'linkcs9ZhumWeTHrtUy8',
+    //     'startId': 'nodeS3WgFnzCI15X58Qw',
+    //     'endId': 'nodeni9QOqT3mI7hsMau',
+    //     'startAt': [100, 40],
+    //     'endAt': [0, 40],
+    //     'meta': {
+    //       'desc':'开始流程'
+    //     }
+    //   },
+    //   {
+    //     'id': 'linkBDld5rDBw4C6kiva',
+    //     'startId': 'nodefHsy9uJObPtdHZv1',
+    //     'endId': 'nodeqkK9zjcDz53xKRlK',
+    //     'startAt': [160, 40],
+    //     'endAt': [0, 40],
+    //     'meta': {
+    //       'desc':'复核'
+    //     }
+    //   },
+    //   {
+    //     'id': 'linkA0ZZxRlDI9AOonuq',
+    //     'startId': 'node7WXbwOR6kSFD53Hf',
+    //     'endId': 'nodefHsy9uJObPtdHZv1',
+    //     'startAt': [160, 40],
+    //     'endAt': [0, 40],
+    //     'meta': null
+    //   },
+    //   {
+    //     'id': 'linkhCKTpRAf89gcujGS',
+    //     'startId': 'nodeni9QOqT3mI7hsMau',
+    //     'endId': 'nodeZBK0ZPpgMe1exezE',
+    //     'startAt': [160, 40],
+    //     'endAt': [0, 40],
+    //     'meta': null
+    //   },
+    //   {
+    //     'id': 'link2o7VZ7DRaSFKtB0g',
+    //     'startId': 'nodeqkK9zjcDz53xKRlK',
+    //     'endId': 'nodeDhVU6w2KbEnJCjZs',
+    //     'startAt': [160, 40],
+    //     'endAt': [0, 25],
+    //     'meta': null
+    //   },
+    //   {
+    //     'id': 'linkII013ovDctUDuPLu',
+    //     'startId': 'nodeS3WgFnzCI15X58Qw',
+    //     'endId': 'nodeG3WeFnzCI15X58Qw',
+    //     'startAt': [100, 40],
+    //     'endAt': [0, 40],
+    //     'meta': null
+    //   },
+    //   {
+    //     'id': 'link6MOmsq1EqzlWcG1n',
+    //     'startId': 'nodeZBK0ZPpgMe1exezE',
+    //     'endId': 'nodeqkK9zjcDz53xKRlK',
+    //     'startAt': [160, 40],
+    //     'endAt': [0, 40],
+    //     'meta': null
+    //   },
+    //   {
+    //     'id': 'link52SczSXHmuyKDzRU',
+    //     'startId': 'nodesyxisLH1hJDdPsxx',
+    //     'endId': 'nodeDhVU6w2KbEnJCjZs',
+    //     'startAt': [160, 40],
+    //     'endAt': [0, 25],
+    //     'meta': null
+    //   },
+    //   {
+    //     'id': 'link2hBQDTuIG4ZFYyE0',
+    //     'startId': 'node0aiA9VuhjkiAdZCs',
+    //     'endId': 'nodesyxisLH1hJDdPsxx',
+    //     'startAt': [160, 40],
+    //     'endAt': [0, 40],
+    //     'meta': null
+    //   },
+    //   {
+    //     'id': 'linkrwdW87FmOma5rPVo',
+    //     'startId': 'nodeG3WeFnzCI15X58Qw',
+    //     'endId': 'node0aiA9VuhjkiAdZCs',
+    //     'startAt': [160, 40],
+    //     'endAt': [0, 40],
+    //     'meta': null
+    //   },
+    //   {
+    //     'id': 'linknL75dQV0AWZA85sq',
+    //     'startId': 'nodeS3WgFnzCI15X58Qw',
+    //     'endId': 'node7WXbwOR6kSFD53Hf',
+    //     'startAt': [100, 40],
+    //     'endAt': [0, 40],
+    //     'meta': null
+    //   }
+    // ]
+    // console.log(JSON.stringify(linkList))
+    // console.log(JSON.parse(linkList))
 
 
 
