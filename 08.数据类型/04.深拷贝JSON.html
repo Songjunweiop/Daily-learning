@@ -1,143 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style></style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
+  <body>
+    <script>
+      // 使用JSON的方法实现深拷贝
+      // let a = {
+      //   age: 22,
+      //   name: {
+      //     name1: "小蜜蜂",
+      //     name2: "wesley",
+      //   },
+      // };
+      // // b = {...a}// 浅拷贝
+      // console.log(JSON.stringify(a));
+      // let b = JSON.parse(JSON.stringify(a));
 
-  </style>
-</head>
+      // b.age = 33;
+      // a.age = 44;
+      // b.name.name1 = "sjw";
 
-<body>
+      // console.log(b);
+      // console.log(a)
 
-  <script>
-    // 使用JSON的方法实现深拷贝
-    let a = {
-      age: 22,
-      name: {
-        name1: "小蜜蜂",
-        name2: "wesley"
-      }
-    }
-    // b = {...a}// 浅拷贝
-    console.log(JSON.stringify(a))
-    let b = JSON.parse(JSON.stringify(a))
+      // const linkList = [
+      //   {
+      //     'id': 'linkcs9ZhumWeTHrtUy8',
+      //     'startId': 'nodeS3WgFnzCI15X58Qw',
+      //     'endId': 'nodeni9QOqT3mI7hsMau',
+      //     'startAt': [100, 40],
+      //     'endAt': [0, 40],
+      //     'meta': {
+      //       'desc':'开始流程'
+      //     }
+      //   },
+      //   {
+      //     'id': 'linkBDld5rDBw4C6kiva',
+      //     'startId': 'nodefHsy9uJObPtdHZv1',
+      //     'endId': 'nodeqkK9zjcDz53xKRlK',
+      //     'startAt': [160, 40],
+      //     'endAt': [0, 40],
+      //     'meta': {
+      //       'desc':'复核'
+      //     }
+      //   },
+      //   {
+      //     'id': 'linkA0ZZxRlDI9AOonuq',
+      //     'startId': 'node7WXbwOR6kSFD53Hf',
+      //     'endId': 'nodefHsy9uJObPtdHZv1',
+      //     'startAt': [160, 40],
+      //     'endAt': [0, 40],
+      //     'meta': null
+      //   },
+      //   {
+      //     'id': 'linkhCKTpRAf89gcujGS',
+      //     'startId': 'nodeni9QOqT3mI7hsMau',
+      //     'endId': 'nodeZBK0ZPpgMe1exezE',
+      //     'startAt': [160, 40],
+      //     'endAt': [0, 40],
+      //     'meta': null
+      //   },
+      //   {
+      //     'id': 'link2o7VZ7DRaSFKtB0g',
+      //     'startId': 'nodeqkK9zjcDz53xKRlK',
+      //     'endId': 'nodeDhVU6w2KbEnJCjZs',
+      //     'startAt': [160, 40],
+      //     'endAt': [0, 25],
+      //     'meta': null
+      //   },
+      //   {
+      //     'id': 'linkII013ovDctUDuPLu',
+      //     'startId': 'nodeS3WgFnzCI15X58Qw',
+      //     'endId': 'nodeG3WeFnzCI15X58Qw',
+      //     'startAt': [100, 40],
+      //     'endAt': [0, 40],
+      //     'meta': null
+      //   },
+      //   {
+      //     'id': 'link6MOmsq1EqzlWcG1n',
+      //     'startId': 'nodeZBK0ZPpgMe1exezE',
+      //     'endId': 'nodeqkK9zjcDz53xKRlK',
+      //     'startAt': [160, 40],
+      //     'endAt': [0, 40],
+      //     'meta': null
+      //   },
+      //   {
+      //     'id': 'link52SczSXHmuyKDzRU',
+      //     'startId': 'nodesyxisLH1hJDdPsxx',
+      //     'endId': 'nodeDhVU6w2KbEnJCjZs',
+      //     'startAt': [160, 40],
+      //     'endAt': [0, 25],
+      //     'meta': null
+      //   },
+      //   {
+      //     'id': 'link2hBQDTuIG4ZFYyE0',
+      //     'startId': 'node0aiA9VuhjkiAdZCs',
+      //     'endId': 'nodesyxisLH1hJDdPsxx',
+      //     'startAt': [160, 40],
+      //     'endAt': [0, 40],
+      //     'meta': null
+      //   },
+      //   {
+      //     'id': 'linkrwdW87FmOma5rPVo',
+      //     'startId': 'nodeG3WeFnzCI15X58Qw',
+      //     'endId': 'node0aiA9VuhjkiAdZCs',
+      //     'startAt': [160, 40],
+      //     'endAt': [0, 40],
+      //     'meta': null
+      //   },
+      //   {
+      //     'id': 'linknL75dQV0AWZA85sq',
+      //     'startId': 'nodeS3WgFnzCI15X58Qw',
+      //     'endId': 'node7WXbwOR6kSFD53Hf',
+      //     'startAt': [100, 40],
+      //     'endAt': [0, 40],
+      //     'meta': null
+      //   }
+      // ]
+      // console.log(JSON.stringify(linkList))
+      // console.log(JSON.parse(linkList))
 
-    b.age = 33
-    a.age = 44
-    b.name.name1 = "sjw"
+      const nodeList = [
+        {
+          id: "nodeS3WgFnzCI15X58Qw",
+          width: 100,
+          height: 80,
+          coordinate: [-644, -148],
+          meta: {
+            prop: "start",
+            name: "开始节点",
+            desc: "流程开始",
+          },
+        },
+        {
+          id: "node7WXbwOR6kSFD53Hf",
+          width: 160,
+          height: 80,
+          coordinate: [-442, -148],
+          meta: {
+            prop: "condition",
+            name: "应急触发",
+            desc: "应急触发",
+          },
+        },
+        {
+          id: "nodefHsy9uJObPtdHZv1",
+          width: 160,
+          height: 80,
+          coordinate: [-200, -148],
+          meta: {
+            prop: "approval",
+            name: "应急复查",
+            desc: "应急复查",
+          },
+        },
+        {
+          id: "nodeqkK9zjcDz53xKRlK",
+          width: 160,
+          height: 80,
+          coordinate: [34, -209],
+          meta: {
+            prop: "cc",
+            name: "复查通过",
+            desc: "复查通过",
+          },
+        },
+        {
+          id: "nodeni9QOqT3mI7hsMau",
+          width: 160,
+          height: 80,
+          coordinate: [-442, -275],
+          meta: {
+            prop: "condition",
+            name: "红色节点",
+          },
+        },
+        {
+          id: "nodeZBK0ZPpgMe1exezE",
+          width: 160,
+          height: 80,
+          coordinate: [-200, -275],
+          meta: {
+            prop: "approval",
+            name: "黄色节点",
+          },
+        },
 
-
-    console.log(b)
-    // console.log(a)
-
-    // const linkList = [
-    //   {
-    //     'id': 'linkcs9ZhumWeTHrtUy8',
-    //     'startId': 'nodeS3WgFnzCI15X58Qw',
-    //     'endId': 'nodeni9QOqT3mI7hsMau',
-    //     'startAt': [100, 40],
-    //     'endAt': [0, 40],
-    //     'meta': {
-    //       'desc':'开始流程'
-    //     }
-    //   },
-    //   {
-    //     'id': 'linkBDld5rDBw4C6kiva',
-    //     'startId': 'nodefHsy9uJObPtdHZv1',
-    //     'endId': 'nodeqkK9zjcDz53xKRlK',
-    //     'startAt': [160, 40],
-    //     'endAt': [0, 40],
-    //     'meta': {
-    //       'desc':'复核'
-    //     }
-    //   },
-    //   {
-    //     'id': 'linkA0ZZxRlDI9AOonuq',
-    //     'startId': 'node7WXbwOR6kSFD53Hf',
-    //     'endId': 'nodefHsy9uJObPtdHZv1',
-    //     'startAt': [160, 40],
-    //     'endAt': [0, 40],
-    //     'meta': null
-    //   },
-    //   {
-    //     'id': 'linkhCKTpRAf89gcujGS',
-    //     'startId': 'nodeni9QOqT3mI7hsMau',
-    //     'endId': 'nodeZBK0ZPpgMe1exezE',
-    //     'startAt': [160, 40],
-    //     'endAt': [0, 40],
-    //     'meta': null
-    //   },
-    //   {
-    //     'id': 'link2o7VZ7DRaSFKtB0g',
-    //     'startId': 'nodeqkK9zjcDz53xKRlK',
-    //     'endId': 'nodeDhVU6w2KbEnJCjZs',
-    //     'startAt': [160, 40],
-    //     'endAt': [0, 25],
-    //     'meta': null
-    //   },
-    //   {
-    //     'id': 'linkII013ovDctUDuPLu',
-    //     'startId': 'nodeS3WgFnzCI15X58Qw',
-    //     'endId': 'nodeG3WeFnzCI15X58Qw',
-    //     'startAt': [100, 40],
-    //     'endAt': [0, 40],
-    //     'meta': null
-    //   },
-    //   {
-    //     'id': 'link6MOmsq1EqzlWcG1n',
-    //     'startId': 'nodeZBK0ZPpgMe1exezE',
-    //     'endId': 'nodeqkK9zjcDz53xKRlK',
-    //     'startAt': [160, 40],
-    //     'endAt': [0, 40],
-    //     'meta': null
-    //   },
-    //   {
-    //     'id': 'link52SczSXHmuyKDzRU',
-    //     'startId': 'nodesyxisLH1hJDdPsxx',
-    //     'endId': 'nodeDhVU6w2KbEnJCjZs',
-    //     'startAt': [160, 40],
-    //     'endAt': [0, 25],
-    //     'meta': null
-    //   },
-    //   {
-    //     'id': 'link2hBQDTuIG4ZFYyE0',
-    //     'startId': 'node0aiA9VuhjkiAdZCs',
-    //     'endId': 'nodesyxisLH1hJDdPsxx',
-    //     'startAt': [160, 40],
-    //     'endAt': [0, 40],
-    //     'meta': null
-    //   },
-    //   {
-    //     'id': 'linkrwdW87FmOma5rPVo',
-    //     'startId': 'nodeG3WeFnzCI15X58Qw',
-    //     'endId': 'node0aiA9VuhjkiAdZCs',
-    //     'startAt': [160, 40],
-    //     'endAt': [0, 40],
-    //     'meta': null
-    //   },
-    //   {
-    //     'id': 'linknL75dQV0AWZA85sq',
-    //     'startId': 'nodeS3WgFnzCI15X58Qw',
-    //     'endId': 'node7WXbwOR6kSFD53Hf',
-    //     'startAt': [100, 40],
-    //     'endAt': [0, 40],
-    //     'meta': null
-    //   }
-    // ]
-    // console.log(JSON.stringify(linkList))
-    // console.log(JSON.parse(linkList))
-
-
-
-
-
-
-
-  </script>
-</body>
-
+        {
+          id: "nodesyxisLH1hJDdPsxx",
+          width: 160,
+          height: 80,
+          coordinate: [34, -75],
+          meta: {
+            prop: "cc",
+            name: "绿色节点",
+          },
+        },
+        {
+          id: "node0aiA9VuhjkiAdZCs",
+          width: 160,
+          height: 80,
+          coordinate: [-200, -2],
+          meta: {
+            prop: "approval",
+            name: "黄色节点",
+          },
+        },
+        {
+          id: "nodeG3WeFnzCI15X58Qw",
+          width: 160,
+          height: 80,
+          coordinate: [-442, -2],
+          meta: {
+            prop: "condition",
+            name: "红色节点",
+          },
+        },
+        {
+          id: "nodeDhVU6w2KbEnJCjZs",
+          width: 100,
+          height: 80,
+          coordinate: [286, -133],
+          meta: {
+            prop: "end",
+            name: "结束节点",
+            desc: "流程结束",
+          },
+        },
+      ];
+      console.log(JSON.stringify(nodeList));
+      const bbbbb = {
+        states: {
+          rect1: {
+            type: "start",
+            text: { text: "开始" },
+            attr: { x: 409, y: 10, width: 50, height: 50 },
+            props: {
+              text: { value: "开始" },
+              temp1: { value: "" },
+              temp2: { value: "" },
+            },
+          },
+          rect2: {
+            type: "task",
+            text: { text: "任务1" },
+            attr: { x: 386, y: 116, width: 100, height: 50 },
+            props: {
+              text: { value: "任务1" },
+              assignee: { value: "" },
+              form: { value: "" },
+              desc: { value: "" },
+            },
+          },
+          rect3: {
+            type: "fork",
+            text: { text: "分支" },
+            attr: { x: 410, y: 209, width: 50, height: 50 },
+            props: {
+              text: { value: "分支" },
+              temp1: { value: "" },
+              temp2: { value: "" },
+            },
+          },
+          rect4: {
+            type: "task",
+            text: { text: "任务2" },
+            attr: { x: 192, y: 317, width: 100, height: 50 },
+            props: {
+              text: { value: "任务2" },
+              assignee: { value: "" },
+              form: { value: "" },
+              desc: { value: "" },
+            },
+          },
+          rect5: {
+            type: "task",
+            text: { text: "任务3" },
+            attr: { x: 385, y: 317, width: 100, height: 50 },
+            props: {
+              text: { value: "任务3" },
+              assignee: { value: "" },
+              form: { value: "" },
+              desc: { value: "" },
+            },
+          },
+          rect6: {
+            type: "task",
+            text: { text: "任务4" },
+            attr: { x: 556, y: 320, width: 100, height: 50 },
+            props: {
+              text: { value: "任务4" },
+              assignee: { value: "" },
+              form: { value: "" },
+              desc: { value: "" },
+            },
+          },
+          rect7: {
+            type: "join",
+            text: { text: "合并" },
+            attr: { x: 410, y: 416, width: 50, height: 50 },
+            props: {
+              text: { value: "合并" },
+              temp1: { value: "" },
+              temp2: { value: "" },
+            },
+          },
+          rect8: {
+            type: "end",
+            text: { text: "结束" },
+            attr: { x: 409, y: 633, width: 50, height: 50 },
+            props: {
+              text: { value: "结束" },
+              temp1: { value: "" },
+              temp2: { value: "" },
+            },
+          },
+          rect9: {
+            type: "task",
+            text: { text: "任务5" },
+            attr: { x: 384, y: 528, width: 100, height: 50 },
+            props: {
+              text: { value: "任务5" },
+              assignee: { value: "" },
+              form: { value: "" },
+              desc: { value: "" },
+            },
+          },
+        },
+        paths: {
+          path10: {
+            from: "rect1",
+            to: "rect2",
+            dots: [],
+            text: { text: "TO 任务1" },
+            textPos: { x: 37, y: -4 },
+            props: { text: { value: "" } },
+          },
+          path11: {
+            from: "rect2",
+            to: "rect3",
+            dots: [],
+            text: { text: "TO 分支" },
+            textPos: { x: 56, y: -1 },
+            props: { text: { value: "" } },
+          },
+          path12: {
+            from: "rect3",
+            to: "rect5",
+            dots: [],
+            text: { text: "TO 任务3" },
+            textPos: { x: 24, y: -5 },
+            props: { text: { value: "" } },
+          },
+          path13: {
+            from: "rect5",
+            to: "rect7",
+            dots: [],
+            text: { text: "TO 合并" },
+            textPos: { x: 41, y: 8 },
+            props: { text: { value: "" } },
+          },
+          path14: {
+            from: "rect7",
+            to: "rect9",
+            dots: [],
+            text: { text: "TO 任务5" },
+            textPos: { x: 36, y: -5 },
+            props: { text: { value: "" } },
+          },
+          path15: {
+            from: "rect9",
+            to: "rect8",
+            dots: [],
+            text: { text: "TO 结束" },
+            textPos: { x: 32, y: 0 },
+            props: { text: { value: "" } },
+          },
+          path16: {
+            from: "rect3",
+            to: "rect4",
+            dots: [{ x: 244, y: 232 }],
+            text: { text: "TO 任务2" },
+            textPos: { x: 0, y: -10 },
+            props: { text: { value: "TO 任务2" } },
+          },
+          path17: {
+            from: "rect4",
+            to: "rect7",
+            dots: [{ x: 242, y: 435 }],
+            text: { text: "TO 合并" },
+            textPos: { x: -3, y: 17 },
+            props: { text: { value: "TO 合并" } },
+          },
+          path18: {
+            from: "rect3",
+            to: "rect6",
+            dots: [{ x: 607, y: 234 }],
+            text: { text: "TO 任务4" },
+            textPos: { x: 0, y: -10 },
+            props: { text: { value: "TO 任务4" } },
+          },
+          path19: {
+            from: "rect6",
+            to: "rect7",
+            dots: [{ x: 607, y: 439 }],
+            text: { text: "TO 合并" },
+            textPos: { x: -8, y: 16 },
+            props: { text: { value: "TO 合并" } },
+          },
+        },
+        props: {
+          props: {
+            name: { value: "新建流程" },
+            key: { value: "" },
+            desc: { value: "" },
+          },
+        },
+      };
+      console.log(JSON.stringify(bbbbb))
+    </script>
+  </body>
 </html>
