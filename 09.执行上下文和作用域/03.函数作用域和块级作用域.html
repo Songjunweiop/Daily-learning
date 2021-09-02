@@ -14,20 +14,26 @@
 <body>
 
   <script>
+    var tmp = new Date();
 
-    var a = 20;
-    var obj = {
-      a: 30
-    }
-    var fn = ()=> {
-      console.log('fn this:', this);
-      var foo = ()=> {
-        console.log(this.a);
+    function f() {
+      console.log(tmp);
+      if (true) {
+        var tmp = "hello";
       }
-      foo();
     }
-    fn.call(obj);
-    // fn();
+    f()
+
+    var aaa = new Date();
+
+    function g() {
+      console.log(aaa);
+      if (true) {
+        let aaa = "hello";
+      }
+    }
+    g()
+
 
 
 

@@ -474,6 +474,26 @@ https://www.jianshu.com/p/0fb2f90418c3
 
 > display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-cell生成了BFC
 
+#### BFC作用：
+
+1. 解决margin的重叠问题：    由于BFC是一个独立区域，内部的元素和外部元素互不影响，将两个元素变为BFC，就解决了margin塌陷问题 
+2. 解决高度塌陷问题：    对子元素设置浮动以后，父元素会发生高度塌陷问题，也就是父元素高度会变成0，只需要在父元素设置overflow:hidden 
+3. 创建自适应两栏布局： 左侧设置为浮动，右侧设置为overflow:hidden,这样右侧就会触发BFC，实现自适应两栏布局    
+
+```css
+    left:{
+        width:100px;
+        hight:200px;
+        float:left;
+    }
+    .right {
+        hight:200px;
+        overflow:hidden;
+     }
+```
+
+
+
 ## 9. 怎么样让一个元素消失
 
 display: none;	元素消失，页面元素没有，无占位，元素上的事件不能执行
