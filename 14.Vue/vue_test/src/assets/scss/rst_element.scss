@@ -1,0 +1,371 @@
+//全局
+// 侧边栏样式
+
+#aside {
+  margin-left: 16px;
+  border: solid 1px #3eadea;
+  box-shadow: inset 0 0 15px 2px #3eadea !important;
+  background-position: top;
+  height: 89.9vh;
+  width: 13.6vw !important;
+  .el-menu {
+    border-right: none;
+    .childitem{
+      padding-left: 112px !important;
+    }
+    .menu_img {
+      position: relative;
+      top: -2px;
+      right: 10px;
+    }
+    .menu_item{
+      padding-left: 96px !important;
+    }
+    .el-menu-item {
+      height: 48px;
+      line-height: 48px;
+      text-align: left;
+      
+      font-size: 15px !important;
+      color: #00a2ff !important;
+    }
+    .el-submenu__title {
+      height: 48px;
+      line-height: 48px;
+      text-align: left;
+      padding-left: 96px !important;
+      font-size: 15px !important;
+      color: #00a2ff !important;
+    }
+    .el-menu-item:hover {
+      background: rgba(92, 102, 153, 0.5) !important;
+      color: #fff !important;
+    }
+    .el-submenu__title:hover {
+      background: rgba(92, 102, 153, 0.5) !important;
+      color: #fff !important;
+    }
+    .el-menu-item.is-active {
+      background: linear-gradient(
+        270deg,
+        rgba(0, 162, 255, 0.1) 0%,
+        #00a2ff 100%
+      );
+      color: #fff !important;
+    }
+    .el-submenu__title.is-active {
+      background: linear-gradient(
+        270deg,
+        rgba(0, 162, 255, 0.1) 0%,
+        #00a2ff 100%
+      );
+      color: #fff !important;
+    }
+  }
+}
+// 路由部分
+#main-contain {
+  width: 83.9vw;
+  // height: 978px;
+  height: 89.9vh;
+  margin: 0 auto;
+
+  background: #f2f2f2;
+  border-radius: 6px;
+  .navigation {
+    height: 3.9vh;
+    line-height: 3.9vh;
+    margin-left: 16px;
+    font-size: 14px;
+  }
+  .search-card {
+    margin: 0 auto;
+    width: 98%;
+    height: 11.8vh;
+    background: #ffffff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    .el-card__body {
+      padding: 0;
+      .el-row {
+        position: relative;
+        left: -23px;
+        width: 98%;
+        display: flex;
+        align-items: center;
+        height: 11.8vh;
+        .el-col {
+          margin: 0 !important;
+          .keyword {
+            margin-left: 40px;
+            line-height: 11.8vh;
+            font-family: Source Han Sans CN;
+            font-size: 14px;
+            line-height: 21px;
+
+            color: #333333;
+          }
+          .el-input {
+            position: relative;
+            left: -10px;
+            border-radius: 4px;
+          }
+          .el-button {
+            padding: 0;
+            width: 88px;
+            height: 36px;
+            border-radius: 4px;
+          }
+          .right_button {
+            position: relative;
+            left: -10px;
+          }
+        }
+      }
+    }
+  }
+  // 表格card样式
+  .box-card {
+    width: 98%;
+    margin: 10px auto;
+    height: 71.1vh;
+    // min-height: 60vh;
+    background: #ffffff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    .el-table {
+      width: 100%;
+      height: 61.6vh;
+      margin: 0 auto;
+      .el-button {
+        padding: 0;
+        width: 40px;
+        height: 28px;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      .el-table__header-wrapper {
+        .cell {
+          text-align: center;
+        }
+      }
+      .el-table__row {
+        height: 48px;
+      }
+      .el-button--primary.is-plain {
+        background-color: #fff;
+        border: 1px solid #f2f2f2;
+      }
+      .el-button--primary.is-plain:hover {
+        background-color: #409eff;
+      }
+      .el-button-group .el-button--primary:first-child {
+        background-color: #fff;
+        border: 1px solid #f2f2f2;
+      }
+      .el-button-group .el-button--primary:hover {
+        background-color: #409eff;
+      }
+      .el-button-group .el-button--danger:last-child {
+        background-color: #fff;
+        border: 1px solid #f2f2f2;
+      }
+      .el-button-group .el-button--danger:hover {
+        background-color: #f56c6c;
+      }
+    }
+    .el-pagination {
+      margin-top: 16px;
+      padding-right: 5px !important;
+      float: right;
+    }
+  }
+}
+// 铃铛样式
+.el-badge {
+  cursor: pointer;
+}
+.el-icon-bell {
+  display: block;
+  margin-right: 30px;
+  position: relative;
+  top: 2px;
+  font-size: 20px;
+}
+
+.el-badge__content {
+  position: relative;
+  right: 32px !important;
+  border: 0px !important;
+  height: 15px;
+  width: 15px;
+  line-height: 15px;
+}
+
+// form弹框样式
+.formDialog {
+  margin-top: 16vh !important;
+  background: rgba(8, 28, 60, 0.8) !important;
+  border: solid 2px #3eadea;
+  box-shadow: inset 0 0 15px 2px #3eadea !important;
+
+  .el-dialog__header {
+    padding: 0;
+    margin: 20px 20px 10px;
+    background: rgba(6, 33, 77, 0.6);
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+
+    .el-dialog__title {
+      color: #fff;
+      font-size: 16px;
+      margin-left: 28px;
+    }
+
+    .el-dialog__headerbtn {
+      top: 32px;
+      right: 36px;
+      font-size: 16px;
+    }
+
+    .el-dialog__headerbtn .el-dialog__close {
+      color: #fff;
+    }
+
+    .el-dialog__headerbtn .el-dialog__close:hover {
+      color: #3eadea;
+    }
+  }
+
+  .el-dialog__body {
+    padding: 0;
+    margin: 10px 20px 20px 20px;
+    background: rgba(6, 33, 77, 0.6);
+    line-height: 40px;
+
+    .formBox {
+      position: relative;
+      left: 24px;
+      text-align: left;
+      padding: 15px;
+      .el-button {
+        border: none;
+        height: 36px;
+      }
+
+      .el-form-item__label {
+        height: 36px;
+        line-height: 36px;
+        color: #f1f2f5;
+      }
+
+      .el-input__inner {
+        height: 36px;
+        background-color: #021637;
+        color: #f1f2f5;
+        border: none;
+      }
+
+      .el-input__inner::placeholder {
+        color: #999;
+      }
+
+      .el-date-editor--datetimerange.el-input,
+      .el-date-editor--datetimerange.el-input__inner {
+        width: 320px;
+      }
+
+      .el-date-editor .el-range-input,
+      .el-date-editor .el-range-separator {
+        background-color: #021637;
+      }
+
+      .el-date-editor .el-range-input {
+        color: #f1f2f5;
+      }
+
+      .el-date-editor .el-range-separator {
+        color: #f1f2f5;
+      }
+
+      .mapPoint {
+        background: #000c21;
+        border: none;
+        color: #00a2ff;
+        position: relative;
+        top: 2px;
+      }
+      .mapPoint:hover {
+        color: white;
+        background: #0380f3;
+      }
+
+      .formBtn {
+        margin-top: 10px;
+        text-align: center;
+
+        .resetForm {
+          background: #000c21;
+          border: none;
+          color: white;
+          margin-left: 40px;
+        }
+        .resetForm:hover {
+          background: #0380f3;
+          border: none;
+          color: white;
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+}
+// 地图选点弹框样式
+.addLngLat {
+  background: rgba(8, 28, 60, 0.8) !important;
+  box-shadow: inset 0 0 10px 2px #3eadea !important;
+  border: solid 2px #3eadea;
+
+  .el-dialog__header {
+    padding: 0;
+    margin: 20px 20px 10px;
+    background: rgba(6, 33, 77, 0.6);
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+
+    .el-dialog__title {
+      color: #fff;
+      font-size: 16px;
+      margin-left: 28px;
+    }
+
+    .el-dialog__headerbtn {
+      top: 32px;
+      right: 36px;
+      font-size: 16px;
+    }
+
+    .el-dialog__headerbtn .el-dialog__close {
+      color: #fff;
+    }
+
+    .el-dialog__headerbtn .el-dialog__close:hover {
+      color: #00edff;
+    }
+  }
+
+  .el-dialog__body {
+    height: 400px;
+    padding: 0;
+    margin: 10px 20px 0px 20px;
+    background: rgba(6, 33, 77, 0.6);
+  }
+
+  .el-dialog__footer {
+    padding: 0;
+    margin: 10px 20px;
+    background: rgba(6, 33, 77, 0.6);
+  }
+}

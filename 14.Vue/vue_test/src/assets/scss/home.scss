@@ -1,0 +1,64 @@
+#home {
+  background: url("../assets/img/sysBackground.png");
+  background-size: 100%;
+  //内容区
+  .content {
+    display: flex;
+    //左侧侧边栏
+    .leftSidebar {
+      width: 100px;
+    }
+    //右侧内容区
+    .rightBox {
+      width: 99%;
+      // height: 980px;
+      .topBox{
+        width: 99%;
+        display: flex;
+        justify-content: space-evenly;
+        margin:0 0 10px 0;
+        
+        .contentMid{
+          // width: 1024px;
+          width: 100vw;
+          background: #9beac6;
+          //height: 736px;
+          // height: 791px;
+          // height: 75vh;
+          // margin-top: -55px;
+          // background: url("../assets/img/mapBg.png") no-repeat;
+          background-size: 100%;
+          // display: flex;
+          // justify-content: center;
+          // align-items: center;
+          // position: relative;
+          .mapBtnBox{
+            font-size: 18px;
+            font-family: Source Han Sans CN;
+            font-weight: 400;
+            color: #FFFFFF;
+            width: 150px;
+            height: 25px;
+            position: absolute;
+            top: 30px;
+            //line-height: 25px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            span{
+              cursor: pointer;
+              transition: all 0.25s linear;
+              &:hover{
+                transition: all 0.25s linear;
+                color: #00F6FF;
+              }
+            }
+            .mapBtnActive{
+              color: #00F6FF;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -781,6 +781,35 @@ router.beforeEach((to, from, next) => {
 
 https://juejin.cn/post/6844903918753808398#heading-21
 
+## 18.v-for中使用对象解构, 循环对象
+
+对象解构：
+
+```vue
+<template>
+  <div class="home">
+    <div v-for="{ name, id } in testArr" :key="id">{{ name }}</div>
+  </div>
+</template>
+//aaa
+//bbb
+//ccc
+//ddd
+```
+
+循环对象：
+
+```vue
+<template>
+  <div class="home">
+    <div v-for="(val, key) in testObj" :key="key">{{ key }}: {{val}}</div>
+  </div>
+</template>
+
+//age: 22
+/name: bee
+```
+
 
 
 # 六、React
